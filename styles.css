@@ -1,4 +1,3 @@
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +12,6 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 200 200'%3E%3Cpolygon fill='%23DCEFFA' points='100 0 0 100 100 100 100 200 200 100 200 0'/%3E%3C/svg%3E");
 
@@ -50,7 +48,6 @@ div img {
 #LightWaves {
     width: calc(100% + 40px);
     left: -40px;
-    /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
 }
 
 #sol {
@@ -81,7 +78,6 @@ div img {
 }
 
 
-/* Aqui va la parte de la animacion del SOL */
 #sol {
     animation: rotacionReversible 6s ease-in-out infinite alternate;
 }
@@ -96,7 +92,6 @@ div img {
     }
 }
 
-/* Aqui va la parte de la animacion de las OLAS */
 #DarkWaves {
     animation: oleaje 2s ease-in-out infinite alternate;
     transform-origin: center bottom;
@@ -118,41 +113,30 @@ div img {
 }
 
 
-/* Aqui va la parte de la animacion de las OLAS */
 #barco {
-    /* IMPORTANTE: Define el punto de rotación en el centro-abajo del barco
-       para que se balancee como un tentetieso y no desde la esquina */
     transform-origin: center bottom;
     transform-box: fill-box;
-    /* Asegura que el centro sea el del propio SVG */
-
-    /* Tu animación original */
     animation: navegarBarco 10s infinite alternate-reverse linear;
 }
 
 @keyframes navegarBarco {
 
-    /* INICIO (Derecha) */
     0% {
         transform: translateX(-140px) translateY(0) rotate(0deg);
     }
 
-    /* OLA 1: El barco sube y se inclina un poco hacia atrás */
     25% {
         transform: translateX(-232px) translateY(-5px) rotate(-3deg);
     }
 
-    /* MITAD: El barco baja y se inclina hacia adelante */
     50% {
         transform: translateX(-325px) translateY(2px) rotate(2deg);
     }
 
-    /* OLA 2: Vuelve a subir */
     75% {
         transform: translateX(-417px) translateY(-5px) rotate(-2deg);
     }
 
-    /* FINAL (Izquierda) */
     100% {
         transform: translateX(-510px) translateY(0) rotate(0deg);
     }
@@ -161,112 +145,46 @@ div img {
 
 
 #peces {
-    /* Usamos una duración cómoda para ver el efecto */
-    animation: saltosReales 12s linear infinite;
+    animation: saltosReales 10s infinite linear;
     transform-origin: center center;
 }
 
 @keyframes saltosReales {
 
-    /* === POSICIÓN INICIAL === */
     0% {
         transform: translateX(0px) translateY(0px) rotate(90deg);
     }
 
-    /* =========================
-       SALTO 1 (Ejemplo Detallado)
-       ========================= */
-
-    /* 1. SUBIDA: Cabeza arriba */
-    8% {
-        transform: translateX(-50px) translateY(-150px) rotate(-45deg);
+    16.5% {
+        transform: translateX(-75px) translateY(-150px) rotate(0deg);
     }
 
-    /* 2. CIMA: Empezamos a girar el morro hacia el agua */
-    12% {
-        transform: translateX(-100px) translateY(-120px) rotate(45deg);
+    33% {
+        transform: translateX(-150px) translateY(0px) rotate(-90deg);
     }
 
-    /* 3. CAÍDA (CLAVE): Justo antes de tocar el agua, mira totalmente en picado (150deg) 
-       y la Y está casi en 0. */
-    14% {
-        transform: translateX(-130px) translateY(-10px) rotate(150deg);
+    34% {
+        transform: translateX(-150px) translateY(0px) rotate(90deg);
     }
 
-    /* 4. ENTRADA: Ya en el agua (Y=0), mantenemos el ángulo de picado. 
-       Así entra "cortando" el agua, no de panza. */
-    15% {
-        transform: translateX(-140px) translateY(0px) rotate(150deg);
+    49.5% {
+        transform: translateX(-225px) translateY(-150px) rotate(0deg);
     }
 
-    /* 5. RECUPERACIÓN: Una vez dentro, se pone horizontal rápido */
-    17% {
-        transform: translateX(-160px) translateY(0px) rotate(90deg);
+    /*  */
+    66% {
+        transform: translateX(-300px) translateY(0px) rotate(-90deg);
     }
 
-    /* =========================
-       SALTO 2 (Más rápido)
-       ========================= */
-    25% {
-        transform: translateX(-240px) translateY(-150px) rotate(-45deg);
+    67% {
+        transform: translateX(-300px) translateY(0px) rotate(0deg);
     }
 
-    /* Cima */
-    28% {
-        transform: translateX(-280px) translateY(-10px) rotate(150deg);
-    }
-
-    /* Caída picado */
-    29% {
-        transform: translateX(-290px) translateY(0px) rotate(150deg);
-    }
-
-    /* Entra picado */
-    31% {
-        transform: translateX(-310px) translateY(0px) rotate(90deg);
-    }
-
-    /* Nada */
-
-    /* =========================
-       SALTO 3 
-       ========================= */
-    45% {
-        transform: translateX(-400px) translateY(-150px) rotate(-45deg);
-    }
-
-    48% {
-        transform: translateX(-440px) translateY(-10px) rotate(150deg);
-    }
-
-    49% {
-        transform: translateX(-450px) translateY(0px) rotate(150deg);
-    }
-
-    51% {
-        transform: translateX(-470px) translateY(0px) rotate(90deg);
-    }
-
-    /* =========================
-       SALTO 4 (Final largo)
-       ========================= */
-    65% {
-        transform: translateX(-580px) translateY(-150px) rotate(-45deg);
-    }
-
-    69% {
-        transform: translateX(-630px) translateY(-10px) rotate(150deg);
-    }
-
-    70% {
-        transform: translateX(-640px) translateY(0px) rotate(150deg);
-    }
-
-    72% {
-        transform: translateX(-660px) translateY(0px) rotate(90deg);
+    82.5% {
+        transform: translateX(-375px) translateY(-150px) rotate(-90deg);
     }
 
     100% {
-        transform: translateX(-800px) translateY(0px) rotate(90deg);
+        transform: translateX(-450px) translateY(0px) rotate(-90deg);
     }
 }
