@@ -145,7 +145,7 @@ div img {
 
 
 #peces {
-    animation: saltosReales 10s infinite linear;
+    animation: saltosReales 12s linear infinite;
     transform-origin: center center;
 }
 
@@ -177,14 +177,17 @@ div img {
     }
 
     67% {
-        transform: translateX(-300px) translateY(0px) rotate(0deg);
+        transform: translateX(-300px) translateY(0px) rotate(90deg);
     }
 
     82.5% {
-        transform: translateX(-375px) translateY(-150px) rotate(-90deg);
+        transform: translateX(-375px) translateY(-150px) rotate(0deg);
     }
 
+    83.5% {
+        transform: translateX(-425px) translateY(0px) rotate(-90deg);
+    }
     100% {
-        transform: translateX(-450px) translateY(0px) rotate(-90deg);
+        transform: translateX(-450px) translateY(0px) rotate(90deg);
     }
 }
